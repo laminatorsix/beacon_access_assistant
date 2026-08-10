@@ -1,0 +1,57 @@
+role,department,permission,page,function,description
+BEACON_AAD_VIEWER,AAD,AAD_ACCOUNT_VIEW,Account Enquiry,View account information,Allows users to view account information
+BEACON_AAD_VIEWER,AAD,AAD_CONTRIBUTION_VIEW,Contribution Enquiry,View contribution information,Allows users to view contribution information
+
+BEACON_AAD_PREPARER,AAD,AAD_ACCOUNT_ENQUIRY,Account Enquiry,Perform account enquiries,Allows users to perform account-related enquiries
+BEACON_AAD_PREPARER,AAD,AAD_TRANSACTION_VIEW,Transaction Enquiry,View transaction information,Allows users to view account transactions
+BEACON_AAD_PREPARER,AAD,AAD_CASE_UPDATE,Account Case,Prepare account cases,Allows users to prepare and update account-related cases
+
+BEACON_AAD_VERIFIER,AAD,AAD_ACCOUNT_ENQUIRY,Account Enquiry,Perform account enquiries,Allows users to perform account-related enquiries
+BEACON_AAD_VERIFIER,AAD,AAD_TRANSACTION_VIEW,Transaction Enquiry,View transaction information,Allows users to view account transactions
+BEACON_AAD_VERIFIER,AAD,AAD_CASE_VERIFY,Account Case,Verify account cases,Allows users to verify account-related cases
+
+BEACON_AAD_SUPERVISOR,AAD,AAD_CASE_VERIFY,Account Case,Review account cases,Allows supervisors to review account-related cases
+
+BEACON_HIS_VIEWER,HIS,HIS_HOUSING_VIEW,Housing Enquiry,View housing information,Allows users to view housing information
+BEACON_HIS_VIEWER,HIS,HIS_HPS_ENQUIRY,HPS Enquiry,View HPS coverage information,Allows users to view HPS-related information
+
+BEACON_HIS_PREPARER,HIS,HIS_HPS_ENQUIRY,HPS Enquiry,Perform HPS coverage enquiries,Allows users to perform HPS-related enquiries
+BEACON_HIS_PREPARER,HIS,HIS_HPS_CLAIM_VIEW,HPS Claims,View HPS claim information,Allows users to view HPS claim information
+BEACON_HIS_PREPARER,HIS,HIS_INVESTMENT_VIEW,Investment Enquiry,View investment information,Allows users to view investment information
+BEACON_HIS_PREPARER,HIS,HIS_CASE_UPDATE,Housing Case,Prepare housing cases,Allows users to prepare and update housing-related cases
+
+BEACON_HIS_VERIFIER,HIS,HIS_HPS_ENQUIRY,HPS Enquiry,Perform HPS coverage enquiries,Allows users to perform HPS-related enquiries
+BEACON_HIS_VERIFIER,HIS,HIS_HPS_CLAIM_VIEW,HPS Claims,View HPS claim information,Allows users to view HPS claim information
+BEACON_HIS_VERIFIER,HIS,HIS_CASE_VERIFY,Housing Case,Verify housing cases,Allows users to verify housing-related cases
+
+BEACON_HIS_SUPERVISOR,HIS,HIS_CASE_VERIFY,Housing Case,Review housing cases,Allows supervisors to review housing-related cases
+
+BEACON_RDD_VIEWER,RDD,RDD_RETIREMENT_VIEW,Retirement Enquiry,View retirement information,Allows users to view retirement information
+BEACON_RDD_VIEWER,RDD,RDD_PAYOUT_ENQUIRY,Payout Enquiry,View payout information,Allows users to view payout information
+
+BEACON_RDD_PREPARER,RDD,RDD_PAYOUT_ENQUIRY,Payout Enquiry,Perform payout enquiries,Allows users to perform payout enquiries
+BEACON_RDD_PREPARER,RDD,RDD_CLAIM_VIEW,Claims,View retirement claim information,Allows users to view claim information
+BEACON_RDD_PREPARER,RDD,RDD_CASE_UPDATE,Retirement Case,Prepare retirement cases,Allows users to prepare and update retirement-related cases
+
+BEACON_RDD_VERIFIER,RDD,RDD_PAYOUT_ENQUIRY,Payout Enquiry,Perform payout enquiries,Allows users to perform payout enquiries
+BEACON_RDD_VERIFIER,RDD,RDD_CLAIM_VIEW,Claims,View retirement claim information,Allows users to view claim information
+BEACON_RDD_VERIFIER,RDD,RDD_CASE_VERIFY,Retirement Case,Verify retirement cases,Allows users to verify retirement-related cases
+
+BEACON_RDD_SUPERVISOR,RDD,RDD_CASE_VERIFY,Retirement Case,Review retirement cases,Allows supervisors to review retirement-related cases
+
+BEACON_CROSS_DEPT_VIEWER,Cross Department,CROSS_DEPT_VIEW,Cross-Department Enquiry,View selected information across departments,Allows cross-department viewing
+
+BEACON_SYSTEM_ADMIN,System Administration,SYSTEM_USER_VIEW,System Administration,View users,Allows administrators to view system users
+BEACON_SYSTEM_ADMIN,System Administration,SYSTEM_ROLE_VIEW,System Administration,View roles,Allows administrators to view system roles
+BEACON_SYSTEM_ADMIN,System Administration,SYSTEM_CONFIGURATION,System Administration,Manage configuration,Allows administrators to manage system configuration
+
+BEACON_AAD_VIP,AAD,AAD_VIP_CONFIDENTIAL_VIEW,VIP Account Enquiry,View restricted account information,Allows authorised users to view restricted account information
+BEACON_AAD_VIP,AAD,AAD_VIP_SENSITIVE_ENQUIRY,VIP Account Enquiry,Perform sensitive account enquiries,Allows authorised users to perform restricted account enquiries
+
+BEACON_HIS_VIP,HIS,HIS_VIP_CONFIDENTIAL_VIEW,VIP Housing Enquiry,View restricted housing information,Allows authorised users to view restricted housing information
+BEACON_HIS_VIP,HIS,HIS_VIP_SENSITIVE_ENQUIRY,VIP Housing Enquiry,Perform sensitive housing enquiries,Allows authorised users to perform restricted housing enquiries
+
+BEACON_RDD_VIP,RDD,RDD_VIP_CONFIDENTIAL_VIEW,VIP Retirement Enquiry,View restricted retirement information,Allows authorised users to view restricted retirement information
+BEACON_RDD_VIP,RDD,RDD_VIP_SENSITIVE_ENQUIRY,VIP Retirement Enquiry,Perform sensitive retirement enquiries,Allows authorised users to perform restricted retirement enquiries
+
+BEACON_CROSS_DEPT_VIP,Cross Department,CROSS_DEPT_VIP_VIEW,VIP Cross-Department Enquiry,View selected restricted information across departments,Allows authorised users to view selected restricted information

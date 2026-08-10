@@ -1,0 +1,37 @@
+issue,department,page,possible_cause,recommended_action
+Cannot view HPS coverage,HIS,HPS Enquiry,User may not have the required HPS enquiry access,Check whether the user has an appropriate HIS role
+Cannot view HPS claims,HIS,HPS Claims,User may not have HPS claims viewing access,Check whether the user has the appropriate HIS role
+Cannot update a housing case,HIS,Housing Case,User may only have viewing access,Check whether the user has the HIS PREPARER role
+Cannot verify a housing case,HIS,Housing Case,User may not have verification access,Check whether the user has the HIS VERIFIER role
+Cannot view housing information,HIS,Housing Enquiry,User may not have housing viewing access,Check whether the user has the HIS VIEWER role
+Cannot view investment information,HIS,Investment Enquiry,User may not have investment viewing access,Check whether the user has the appropriate HIS role
+Cannot view account information,AAD,Account Enquiry,User may not have account viewing access,Check whether the user has the AAD VIEWER role
+Cannot view contributions,AAD,Contribution Enquiry,User may not have contribution viewing access,Check whether the user has the appropriate AAD role
+Cannot view transactions,AAD,Transaction Enquiry,User may not have transaction viewing access,Check whether the user has the appropriate AAD role
+Cannot update an account case,AAD,Account Case,User may not have preparation access,Check whether the user has the AAD PREPARER role
+Cannot verify an account case,AAD,Account Case,User may not have verification access,Check whether the user has the AAD VERIFIER role
+Cannot view retirement information,RDD,Retirement Enquiry,User may not have retirement viewing access,Check whether the user has the RDD VIEWER role
+Cannot view payout information,RDD,Payout Enquiry,User may not have payout enquiry access,Check whether the user has the appropriate RDD role
+Cannot view retirement claims,RDD,Claims,User may not have claims viewing access,Check whether the user has the appropriate RDD role
+Cannot update a retirement case,RDD,Retirement Case,User may not have preparation access,Check whether the user has the RDD PREPARER role
+Cannot verify a retirement case,RDD,Retirement Case,User may not have verification access,Check whether the user has the RDD VERIFIER role
+Connection refused,HIS,UNKNOWN,The BEACON service or website may currently be unavailable,The website is likely down. Please contact the BEACON team for more information.
+Connection refused,AAD,UNKNOWN,The BEACON service or website may currently be unavailable,The website is likely down. Please contact the BEACON team for more information.
+Connection refused,RDD,UNKNOWN,The BEACON service or website may currently be unavailable,The website is likely down. Please contact the BEACON team for more information.
+Connection refused,GENERAL,UNKNOWN,The BEACON service or website may currently be unavailable,The website is likely down. Please contact the BEACON team for more information.
+Applied for access but cannot see the screen,GENERAL,UNKNOWN,The access request may not have been processed or provisioned yet,Please contact the BEACON team to check the status of your access request.
+Applied for access but cannot see the screen,HIS,UNKNOWN,The access request may not have been processed or provisioned yet,Please contact the BEACON team to check the status of your access request.
+Applied for access but cannot see the screen,AAD,UNKNOWN,The access request may not have been processed or provisioned yet,Please contact the BEACON team to check the status of your access request.
+Applied for access but cannot see the screen,RDD,UNKNOWN,The access request may not have been processed or provisioned yet,Please contact the BEACON team to check the status of your access request.
+Connection refused,GENERAL,UNKNOWN,The BEACON service or website may currently be unavailable,The website is likely down. Please contact the BEACON team for more information.
+Applied for access but cannot see the screen,GENERAL,UNKNOWN,The access request may not have been processed or provisioned yet,Please contact the BEACON team to check the status of your access request.
+BEACON inaccessible during scheduled maintenance,GENERAL,UNKNOWN,The platform may be undergoing scheduled maintenance,Please wait until the maintenance window has ended before trying again.
+BEACON inaccessible during certain hours,GENERAL,UNKNOWN,The platform may have restricted operating hours,Please try accessing BEACON during the permitted operating hours. Contact the BEACON team if you require further information.
+BEACON page keeps loading,GENERAL,UNKNOWN,The service may be experiencing temporary performance or connectivity issues,"Wait a few minutes and try again. If the issue persists, please contact the BEACON team."
+BEACON page displays an error,GENERAL,UNKNOWN,The service may have encountered a temporary application error,"Try refreshing the page and accessing it again. If the issue persists, please contact the BEACON team."
+BEACON suddenly becomes inaccessible,GENERAL,UNKNOWN,There may be a temporary service interruption,"Wait a few minutes and try again. If the issue persists, please contact the BEACON team."
+Access request is still pending,GENERAL,UNKNOWN,The access request may still be undergoing processing or approval,"Please contact the BEACON team to check the status of your access request."
+Access was approved but screen is still unavailable,GENERAL,UNKNOWN,The approved access may not have been provisioned or reflected in the platform yet,"Please contact the BEACON team to verify that your access has been provisioned."
+Screen is blank,GENERAL,UNKNOWN,The page may not have loaded correctly or the service may be experiencing an issue,"Try refreshing the page. If the issue persists, please contact the BEACON team."
+Unable to log in to BEACON,GENERAL,UNKNOWN,There may be an authentication or account access issue,"Check that your login credentials are correct and try again. If the issue persists, please contact the BEACON team."
+BEACON is slow,GENERAL,UNKNOWN,The platform may be experiencing temporary performance issues,"Wait a few minutes and try again. If the issue persists, please contact the BEACON team."
