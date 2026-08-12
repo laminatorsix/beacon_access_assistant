@@ -16,40 +16,78 @@ st.write(
     "will provide troubleshooting guidance."
 )
 
-
 # Load troubleshooting data
 troubleshooting_df = pd.read_csv(
     "data/troubleshooting.csv"
 )
 
-
 # Initialise chat history
 if "messages" not in st.session_state:
-
     st.session_state.messages = []
-
 
 # Display previous messages
 for message in st.session_state.messages:
-
     with st.chat_message(message["role"]):
-
         st.write(message["content"])
 
+# Example questions
+st.write("**Try an example:**")
+
+col1, col2, col3, col4 = st.columns(4)
+
+with col1:
+    if st.button(
+        "🏠 Housing case",
+        use_container_width=True
+    ):
+        st.session_state.example_prompt = (
+            "Why can't I verify a housing case?"
+        )
+
+with col2:
+    if st.button(
+        "🔌 Connection refused",
+        use_container_width=True
+    ):
+        st.session_state.example_prompt = (
+            "Why is BEACON showing connection refused?"
+        )
+
+with col3:
+    if st.button(
+        "⏳ Access approved",
+        use_container_width=True
+    ):
+        st.session_state.example_prompt = (
+            "I applied for access already but I still can't see the screen."
+        )
+
+with col4:
+    if st.button(
+        "⚠️ Confidential information",
+        use_container_width=True
+    ):
+        st.session_state.example_prompt = (
+            "I can't view confidential information."
+        )
 
 # Chat input
 prompt = st.chat_input(
     "Describe your access issue..."
 )
 
+# Use example question if one was selected
+if "example_prompt" in st.session_state:
+
+    if prompt is None:
+        prompt = st.session_state.example_prompt
+
+    del st.session_state.example_prompt
 
 if prompt:
-
     # Display user message
     with st.chat_message("user"):
-
         st.write(prompt)
-
 
     st.session_state.messages.append(
         {
@@ -57,7 +95,6 @@ if prompt:
             "content": prompt
         }
     )
-
 
     # Understand the problem
     with st.spinner("Analysing your issue..."):
@@ -128,16 +165,15 @@ if prompt:
 
         # If no specific department or page was identified,
         # search using the identified issue.
-        if (
-            intent["department"] == "UNKNOWN"
-            and intent["page"] == "UNKNOWN"
-        ):
+        # Filter by identified issue
+        if intent["issue"] != "UNKNOWN":
 
-            results = troubleshooting_df[
-                troubleshooting_df["issue"].str.contains(
+            results = results[
+                results["issue"].str.contains(
                     intent["issue"],
                     case=False,
-                    na=False
+                    na=False,
+                    regex=False
                 )
             ]
 
@@ -166,7 +202,7 @@ if prompt:
 
                 response = (
                     "I couldn't find a matching troubleshooting "
-                    "scenario in the prototype knowledge base. "
+                    "scenario in the knowledge base. "
                     "Please check that you have the appropriate "
                     "BEACON access role or contact your administrator."
                 )

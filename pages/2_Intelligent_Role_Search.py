@@ -16,16 +16,50 @@ st.write(
     "you need access to."
 )
 
-
 # Load role data
 roles_df = pd.read_csv("data/roles.csv")
 
+# Example searches
+if "search_query" not in st.session_state:
+    st.session_state.search_query = ""
 
+st.write("**Try an example:**")
+
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    if st.button(
+        "🏠 Verify housing case",
+        use_container_width=True
+    ):
+        st.session_state.search_query = (
+            "I need to verify a housing case."
+        )
+
+with col2:
+    if st.button(
+        "📝 Prepare account case",
+        use_container_width=True
+    ):
+        st.session_state.search_query = (
+            "I need to prepare an account case."
+        )
+
+with col3:
+    if st.button(
+        "🔐 Confidential Retirement",
+        use_container_width=True
+    ):
+        st.session_state.search_query = (
+            "I need to access confidential retirement information."
+        )
+
+#User search query
 query = st.text_input(
     "What do you need access to?",
-    placeholder="e.g. I need to check confidential HPS information"
+    value=st.session_state.search_query,
+    placeholder="e.g. I need to verify a housing case"
 )
-
 
 if st.button("Search"):
 
@@ -37,6 +71,37 @@ if st.button("Search"):
         with st.spinner("Understanding your request..."):
 
             intent = interpret_search_query(query)
+
+        # Validate input values
+        valid_departments = [
+            "AAD",
+            "HIS",
+            "RDD",
+            "GENERAL",
+            "UNKNOWN"
+        ]
+
+        valid_actions = [
+            "VIEW",
+            "PREPARE",
+            "VERIFY",
+            "UNKNOWN"
+        ]
+
+        valid_access_levels = [
+            "STANDARD",
+            "VIP",
+            "UNKNOWN"
+        ]
+
+        if intent["department"] not in valid_departments:
+            intent["department"] = "UNKNOWN"
+
+        if intent["action"] not in valid_actions:
+            intent["action"] = "UNKNOWN"
+
+        if intent["access_level"] not in valid_access_levels:
+            intent["access_level"] = "UNKNOWN"
 
         if (
             intent["department"] == "UNKNOWN"
@@ -77,6 +142,7 @@ if st.button("Search"):
         # Start with all data
         results = roles_df.copy()
 
+        st.text(intent)
 
         # Filter department
         if intent["department"] != "UNKNOWN":

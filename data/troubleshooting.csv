@@ -15,6 +15,7 @@ Cannot view payout information,RDD,Payout Enquiry,User may not have payout enqui
 Cannot view retirement claims,RDD,Claims,User may not have claims viewing access,Check whether the user has the appropriate RDD role
 Cannot update a retirement case,RDD,Retirement Case,User may not have preparation access,Check whether the user has the RDD PREPARER role
 Cannot verify a retirement case,RDD,Retirement Case,User may not have verification access,Check whether the user has the RDD VERIFIER role
+Cannot view confidential information,GENERAL,UNKNOWN,User may not have VIP access, Check whether the user has the appropriate VIP role
 Connection refused,HIS,UNKNOWN,The BEACON service or website may currently be unavailable,The website is likely down. Please contact the BEACON team for more information.
 Connection refused,AAD,UNKNOWN,The BEACON service or website may currently be unavailable,The website is likely down. Please contact the BEACON team for more information.
 Connection refused,RDD,UNKNOWN,The BEACON service or website may currently be unavailable,The website is likely down. Please contact the BEACON team for more information.

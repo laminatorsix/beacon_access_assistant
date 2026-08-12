@@ -12,18 +12,20 @@ st.markdown(
     """
     # BEACON AI Access Assistant
 
-    The **BEACON AI Access Assistant** is a web
-    application designed to help users troubleshoot access
-    issues and identify the appropriate roles required to
-    access functions within the BEACON platform.
+    The **BEACON AI Access Assistant** is an educational web
+    application prototype designed to help users troubleshoot
+    access-related issues and identify potentially relevant
+    roles for functions within the BEACON platform.
 
-    The application uses **OpenAI GPT-4o mini** to interpret
-    natural-language requests and combines this with
-    structured datasets to provide relevant access
-    recommendations and troubleshooting guidance.
+    The application combines **OpenAI GPT-4o mini**, Python
+    application logic and structured datasets to interpret
+    natural-language requests and provide relevant information.
+
+    The project demonstrates how AI can be integrated into a
+    practical web application while keeping access decisions
+    controlled by predefined application data and logic.
     """
 )
-
 
 # ============================================================
 # 1. PROJECT SCOPE
@@ -33,51 +35,77 @@ st.header("1. Project Scope")
 
 st.write(
     """
-    The scope of this project is to develop a functional AI
-    assistant that supports two main use cases within a
-    BEACON environment:
+    The project focuses on two main use cases that support
+    BEACON access-related tasks.
+    """
+)
+
+st.subheader("💬 Use Case 1 — Chat with Information")
+
+st.write(
+    """
+    The Chat Assistant allows users to describe an access or
+    platform issue using natural language. GPT-4o mini interprets
+    the request and the application retrieves relevant
+    troubleshooting information from the knowledge base.
     """
 )
 
 st.markdown(
     """
-    **Use Case 1 — Chat with Information**
-
-    Users can describe an access or platform issue using
-    natural language. The AI assistant interprets the issue
-    and provides relevant troubleshooting information from
-    the application's knowledge base.
-
-    Examples include:
+    **Example scenarios:**
 
     - Unable to view an HPS screen
     - Unable to verify a housing case
     - Receiving a "connection refused" message
     - Access has been approved but the screen is still unavailable
     - BEACON being temporarily inaccessible
-
-
-    **Use Case 2 — Intelligent Search**
-
-    Users can describe the function or information they need
-    access to without needing to know the exact role name.
-
-    The system identifies the relevant:
-
-    - Department
-    - Page or function
-    - Action
-    - Access level
-
-    It then searches the role dataset and presents
-    potentially relevant roles to the user.
+    - Access requests that have not yet been reflected
     """
 )
 
+st.subheader("🔍 Use Case 2 — Intelligent Search")
+
 st.write(
     """
-    The covers three business
-    departments:
+    Intelligent Search allows users to describe the BEACON
+    function or information they need without having to know
+    the exact role name.
+
+    GPT-4o mini interprets the request and identifies:
+    """
+)
+
+st.markdown(
+    """
+    - **Department**
+    - **Page / Function**
+    - **Action**
+    - **Access Level**
+
+    The application then uses these attributes to search the
+    role dataset and display potentially relevant roles.
+    """
+)
+
+st.info(
+    """
+    The Intelligent Search function recommends potentially
+    relevant roles. It does not grant, approve or provision
+    access.
+    """
+)
+
+# ============================================================
+# 2. DEPARTMENTS
+# ============================================================
+
+st.header("2. BEACON Departments")
+
+st.write(
+    """
+    The prototype represents three business
+    departments within the BEACON platform:
     """
 )
 
@@ -97,133 +125,123 @@ with col3:
 
 st.info(
     """
-    A GENERAL category is also used for platform-wide
-    troubleshooting scenarios such as connection issues,
-    maintenance, and access provisioning problems.
+    A **GENERAL** category is also used for platform-wide
+    troubleshooting scenarios, such as connection issues,
+    maintenance, platform availability and access provisioning
+    problems.
     """
 )
 
-
 # ============================================================
-# 2. PROJECT OBJECTIVES
+# 3. PROJECT OBJECTIVES
 # ============================================================
 
-st.header("2. Project Objectives")
+st.header("3. Project Objectives")
 
 st.markdown(
     """
-    The main objectives of the project are:
+    ### 1. Improve accessibility of access information
 
-    **1. Improve accessibility of access information**
+    Allow users to describe their requirements in natural
+    language rather than requiring them to know specific role
+    or permission names.
 
-    Allow users to describe what they need in natural
-    language rather than requiring them to know specific
-    role or permission names.
+    ### 2. Provide AI-assisted troubleshooting
 
-    **2. Provide AI-assisted troubleshooting**
+    Help users identify possible causes of common BEACON access
+    issues and provide appropriate next steps.
 
-    Help users understand common BEACON access problems and
-    provide appropriate next steps.
-
-    **3. Demonstrate the application of AI**
+    ### 3. Demonstrate practical use of AI
 
     Demonstrate how a large language model can interpret
-    natural-language queries and convert them into structured
-    information that can be used by a software application.
+    natural-language requests and convert them into structured
+    information that can be processed by a software application.
 
-    **4. Provide role recommendations**
+    ### 4. Provide role recommendations
 
-    Help users identify potentially relevant roles based
-    on the BEACON function they are trying to access.
+    Help users identify potentially relevant roles based on
+    the BEACON function they are trying to access.
 
-    **5. Protect confidential information**
+    ### 5. Provide a user-friendly interface
 
-    Demonstrate the concept using data rather
-    than actual internal roles, permissions, or system
-    information.
-
-    **6. Provide a simple and user-friendly interface**
-
-    Present the AI functionality through an accessible
-    Streamlit web application.
+    Present both AI use cases through a simple, accessible
+    multi-page Streamlit web application.
     """
 )
 
-
 # ============================================================
-# 3. DATA SOURCES
+# 4. DATA SOURCES
 # ============================================================
 
-st.header("3. Data Sources")
+st.header("4. Data Sources")
+
+st.subheader("📋 Role Dataset — roles.csv")
 
 st.write(
     """
-    To protect privacy and avoid exposing actual internal
-    information, this does not use production
-    BEACON data.
-
-    Instead, the application uses datasets
-    created specifically for this project.
+    The role dataset provides the structured information used
+    by the Intelligent Search function.
     """
 )
 
-st.subheader("Role Dataset")
-
 st.markdown(
     """
-    **`roles.csv`**
-
-    Contains examples of:
+    **The dataset contains examples of:**
 
     - BEACON roles
     - Departments
     - Permissions
     - Pages and functions
     - Actions
-    - Access descriptions
+    - Access levels
+    - Role descriptions
 
-    The dataset includes **PREPARER**, **VERIFIER** and
-    **VIP** roles to demonstrate different levels of access.
+    The prototype includes **PREPARER**, **VERIFIER** and
+    **VIP** roles to demonstrate different access requirements.
     """
 )
 
-st.subheader("Troubleshooting Dataset")
+st.subheader("🛠️ Troubleshooting Dataset — troubleshooting.csv")
+
+st.write(
+    """
+    The troubleshooting dataset provides the knowledge base
+    used by the Chat Assistant.
+    """
+)
 
 st.markdown(
     """
-    **`troubleshooting.csv`**
-
-    Contains troubleshooting scenarios covering:
+    **The dataset contains scenarios covering:**
 
     - Access and permission problems
     - HPS and housing-related issues
-    - Account and retirement-related issues
+    - Account-related issues
+    - Retirement-related issues
     - Connection errors
     - Platform availability issues
     - Access requests that have not yet been reflected
     - General platform problems
 
-    Each scenario contains a possible cause and a
-    recommended action.
+    Each scenario contains information such as the possible
+    cause and recommended action.
     """
 )
 
-
 # ============================================================
-# 4. KEY FEATURES
+# 5. KEY FEATURES
 # ============================================================
 
-st.header("4. Key Features")
+st.header("5. Key Features")
 
 st.subheader("💬 AI Chat Assistant")
 
 st.write(
     """
-    Users can describe an access problem in natural language.
-    GPT-4o mini identifies the relevant department, page,
-    action and issue before the application retrieves
-    relevant troubleshooting information from the mock
-    dataset.
+    Users can describe an access problem using natural language.
+    GPT-4o mini interprets the request and identifies relevant
+    information before the application retrieves a matching
+    troubleshooting scenario.
     """
 )
 
@@ -231,10 +249,10 @@ st.subheader("🔍 Intelligent Search")
 
 st.write(
     """
-    Users can describe the BEACON function they need access
-    to. The AI identifies the user's intended department,
-    page, action and access level, allowing the application
-    to find matching roles.
+    Users can describe the BEACON function they need access to.
+    The AI identifies the intended department, page, action and
+    access level, allowing the application to search for matching
+    roles.
     """
 )
 
@@ -242,11 +260,12 @@ st.subheader("🔐 VIP Access Guidance")
 
 st.write(
     """
-    When a user searches for confidential or VIP-level
-    information, the application identifies the relevant
-    VIP role while reminding the user that VIP access
-    should be cleared with their supervisor before requesting
-    the role.
+    VIP roles represent access to more confidential or sensitive
+    information within the platform.
+
+    When VIP access is identified, the application displays a
+    reminder that the request should be cleared with the user's
+    supervisor before requesting the role.
     """
 )
 
@@ -255,56 +274,68 @@ st.subheader("⚠️ Out-of-Scope Handling")
 st.write(
     """
     The Chat Assistant is designed specifically for BEACON
-    access-related questions. Questions unrelated to BEACON
-    access are identified as being outside the scope of the
-    assistant rather than being treated as platform issues.
+    access-related questions. Requests that are unrelated to
+    BEACON access are not treated as platform issues.
     """
 )
 
-st.subheader("🌐 Web-Based Interface")
+st.subheader("🛡️ Basic Security Safeguards")
 
 st.write(
     """
-    The application is built using Streamlit and provides a
-    simple web interface through which users can interact
-    with both AI use cases.
+    The prototype includes basic safeguards to reduce misuse
+    of the AI functionality.
     """
 )
 
+st.markdown(
+    """
+    - The application is password protected.
+    - User input is treated as untrusted input.
+    - The AI is instructed not to follow attempts to override
+      its system instructions.
+    - The AI does not directly grant or provision access.
+    - Role recommendations are determined using the structured
+      dataset and application logic.
+    - VIP requests include an explicit supervisor approval
+      reminder.
+    - API credentials and application secrets are stored using
+      Streamlit Secrets rather than directly in the source code.
+    """
+)
 
 # ============================================================
-# 5. TECHNOLOGY
+# 6. TECHNOLOGY
 # ============================================================
 
-st.header("5. Technologies Used")
+st.header("6. Technologies Used")
 
 tech_col1, tech_col2 = st.columns(2)
 
 with tech_col1:
-
     st.markdown(
         """
         **Streamlit**
 
-        Used to develop the interactive web application
-        interface.
+        Used to develop the multi-page web application and
+        interactive user interface.
 
         **Python**
 
         Used for application logic, data processing and
-        integration between the user interface, AI model
-        and datasets.
+        integration between the interface, AI model and
+        datasets.
         """
     )
 
 with tech_col2:
-
     st.markdown(
         """
         **OpenAI GPT-4o mini**
 
-        Used to interpret natural-language user queries and
-        identify relevant structured information.
+        Used to interpret natural-language requests and
+        identify structured information such as department,
+        page, action and access level.
 
         **Pandas / CSV**
 
@@ -313,61 +344,117 @@ with tech_col2:
         """
     )
 
-
 # ============================================================
-# 6. PROJECT LIMITATIONS
+# 7. HOW THE AI IS USED
 # ============================================================
 
-st.header("6. Project Limitations")
+st.header("7. How AI Is Used")
+
+st.write(
+    """
+    GPT-4o mini is used primarily for **natural-language
+    understanding**, rather than as the source of truth for
+    roles or permissions.
+    """
+)
 
 st.markdown(
     """
-    This application is **developed for
-    the purposes of this project**.
+    The general process is:
 
-    It does not:
+    **User request**
+
+    ↓
+
+    **GPT-4o mini interprets the request**
+
+    ↓
+
+    **Structured information is produced**
+
+    ↓
+
+    **Python validates and processes the information**
+
+    ↓
+
+    **dataset is searched**
+
+    ↓
+
+    **Relevant information is presented to the user**
+    """
+)
+
+st.info(
+    """
+    Separating AI interpretation from the application's
+    deterministic role-matching logic helps prevent the AI
+    from directly making access decisions.
+    """
+)
+
+# ============================================================
+# 8. PROJECT LIMITATIONS
+# ============================================================
+
+st.header("8. Project Limitations")
+
+
+st.markdown(
+    """
+    **The application does not:**
 
     - Connect to the actual BEACON platform
     - Access production databases
     - Grant or revoke user permissions
+    - Provision roles
     - Authenticate users against an internal identity system
-    - Determine whether a user is actually authorised to
-      receive a role
+    - Determine whether a real user is authorised to receive
+      a role
     - Replace existing access approval processes
+    - Provide actual confidential BEACON information
 
-    Role recommendations provided by the application are
-    based entirely on the datasets created for it.
+    Role recommendations and troubleshooting responses are
+    based on the datasets created for this
+    project.
     """
 )
 
-
 # ============================================================
-# 7. DOCUMENTATION
+# 9. DOCUMENTATION
 # ============================================================
 
-st.header("7. Project Documentation")
+st.header("9. Project Documentation")
 
 st.write(
     """
-    This application contains a separate **Methodology**
-    page explaining how the system works, including the data
-    flows and implementation approach for both use cases.
+    The application includes a dedicated Methodology page that
+    provides further technical documentation of the system.
     """
 )
 
 st.markdown(
     """
-    **Methodology**
-
-    The Methodology page documents:
+    **The Methodology page covers:**
 
     - Overall application architecture
+    - Data sources and data processing
     - Chat Assistant data flow
     - Intelligent Search data flow
-    - Use of GPT-4o mini
-    - Processing of datasets
+    - Prompt engineering
+    - AI output processing
     - Role matching logic
     - Troubleshooting retrieval
-    - Flowcharts for both use cases
+    - Security and prompt-injection safeguards
+    - Error handling
+    - System limitations
+    """
+)
+
+st.success(
+    """
+    For a detailed explanation of how the application works,
+    see the **Methodology** page.
     """
 )
