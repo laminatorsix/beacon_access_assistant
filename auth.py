@@ -9,7 +9,7 @@ def check_password():
     if st.session_state.authenticated:
         return True
 
-    st.title("🔐 BEACON AI Access Assistant")
+    st.title("🔐 BEACON Troubleshooting Assistant")
 
     st.write(
         "Please enter the password to access the application."
