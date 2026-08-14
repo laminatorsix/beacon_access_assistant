@@ -32,11 +32,11 @@ with st.expander("⚠️ IMPORTANT NOTICE — Proof of Concept", expanded=True):
         """
     )
 
-st.title("🔐 BEACON Access Assistant")
+st.title("🔐 BEACON Troubleshooting Assistant")
 
 st.write(
     """
-    Welcome to the BEACON Access Assistant!
+    Welcome to the BEACON Troubleshooting Assistant!
 
     This application helps users troubleshoot access and permissions issues
     for various screens on the BEACON platform, and identify the roles required
