@@ -7,7 +7,7 @@ if not check_password():
 logout()
 
 st.set_page_config(
-    page_title="BEACON Access Assistant",
+    page_title="BEACON Troubleshooting Assistant",
     page_icon="🔐",
     layout="wide"
 )

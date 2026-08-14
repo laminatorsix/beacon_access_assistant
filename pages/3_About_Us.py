@@ -10,9 +10,9 @@ st.title("ℹ️ About Us")
 
 st.markdown(
     """
-    # BEACON AI Access Assistant
+    # BEACON AI Troubleshooting Assistant
 
-    The **BEACON AI Access Assistant** is an educational web
+    The **BEACON AI Troubleshooting Assistant** is an educational web
     application prototype designed to help users troubleshoot
     access-related issues and identify potentially relevant
     roles for functions within the BEACON platform.
